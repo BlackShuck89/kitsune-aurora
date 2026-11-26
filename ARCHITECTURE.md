@@ -5283,3 +5283,7 @@ than disappearing; cards have a dynamically sized instance buffer.
 `build/linking.rs` follows LLSelectMgr::enableLinkObjects / linkObjects: full selection properties and effective rights are checked before sending, with permanent-object, region, owner, RLVa and animated-mesh limits shared by both layouts and the object menu. Scene mesh-header estimates are refreshed before editor input. `aurora-net::build::link_batches` retains the root in every 254-object packet; confirmation accounts for later batches preceding earlier children. OpenRegionInfo supplies the region link limit; SimulatorFeatures supplies the animated-object triangle budget.
 
 `imports/attachments.rs` keeps private texture/material preview bindings on inventory attachment identities across re-rez; child geometry and transforms disambiguate parts independently of arrival order. The saved library order drives the texture picker's newest-first sort.
+
+## Kitsune fork boundary
+
+The Kitsune fork retains Aurora crate names and rendering architecture. Application data uses ProjectDirs org/Kitsune/KitsuneViewer, including updater maintenance and Blender LiveMesh discovery. Linux SLURL handoff has its own D-Bus namespace. Release discovery and download allowlists target BlackShuck89/kitsune-aurora; signature verification is unchanged. See KITSUNE.md for migration scope and remaining identity work.

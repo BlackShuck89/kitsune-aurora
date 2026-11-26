@@ -446,12 +446,12 @@ class TokenTests(unittest.TestCase):
 
     def test_token_path_follows_the_viewers_folders(self):
         with patch.object(module.sys, "platform", "win32"), patch.dict(module.os.environ, {"LOCALAPPDATA": r"C:\Users\u\AppData\Local"}):
-            self.assertTrue(module.token_path(17655).replace("\\", "/").endswith("Local/Aurora/AuroraViewer/data/blender-live/17655.token"))
+            self.assertTrue(module.token_path(17655).replace("\\", "/").endswith("Local/Kitsune/KitsuneViewer/data/blender-live/17655.token"))
         with patch.object(module.sys, "platform", "linux"), patch.dict(module.os.environ, {"XDG_DATA_HOME": "/home/u/.data"}):
-            self.assertEqual(module.token_path(17656).replace("\\", "/"), "/home/u/.data/auroraviewer/blender-live/17656.token")
+            self.assertEqual(module.token_path(17656).replace("\\", "/"), "/home/u/.data/kitsuneviewer/blender-live/17656.token")
         with patch.object(module.sys, "platform", "darwin"):
             self.assertTrue(module.token_path(17655).replace("\\", "/").endswith(
-                "Library/Application Support/org.Aurora.AuroraViewer/blender-live/17655.token"))
+                "Library/Application Support/org.Kitsune.KitsuneViewer/blender-live/17655.token"))
 
 if __name__ == "__main__":
     unittest.main()

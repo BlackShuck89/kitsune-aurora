@@ -22,18 +22,18 @@ NO_TOKEN = "Enable preview in Aurora's LiveMesh window"
 
 def token_path(port):
     """The secret Aurora writes each time its preview starts, in the viewer's
-    data folder (ProjectDirs "org", "Aurora", "AuroraViewer" of the directories
+    data folder (ProjectDirs "org", "Kitsune", "KitsuneViewer" of the directories
     crate, crates/aurora-viewer/src/blender_live/token.rs)."""
     if sys.platform == "win32":
         base = os.environ.get("LOCALAPPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Local")
-        data = os.path.join(base, "Aurora", "AuroraViewer", "data")
+        data = os.path.join(base, "Kitsune", "KitsuneViewer", "data")
     elif sys.platform == "darwin":
-        data = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "org.Aurora.AuroraViewer")
+        data = os.path.join(os.path.expanduser("~"), "Library", "Application Support", "org.Kitsune.KitsuneViewer")
     else:
         base = os.environ.get("XDG_DATA_HOME", "")
         if not os.path.isabs(base):
             base = os.path.join(os.path.expanduser("~"), ".local", "share")
-        data = os.path.join(base, "auroraviewer")
+        data = os.path.join(base, "kitsuneviewer")
     return os.path.join(data, "blender-live", "{}.token".format(port))
 
 

@@ -70,10 +70,10 @@ def logs_dir() -> Path:
     home = Path.home()
     system = platform.system()
     if system == "Windows":
-        return Path(os.environ.get("LOCALAPPDATA", home / "AppData/Local")) / "Aurora/AuroraViewer/data/logs"
+        return Path(os.environ.get("LOCALAPPDATA", home / "AppData/Local")) / "Kitsune/KitsuneViewer/data/logs"
     if system == "Darwin":
-        return home / "Library/Application Support/org.Aurora.AuroraViewer/logs"
-    return Path(os.environ.get("XDG_DATA_HOME", home / ".local/share")) / "auroraviewer/logs"
+        return home / "Library/Application Support/org.Kitsune.KitsuneViewer/logs"
+    return Path(os.environ.get("XDG_DATA_HOME", home / ".local/share")) / "kitsuneviewer/logs"
 
 
 def default_exe() -> Path:
@@ -91,11 +91,11 @@ def demo_settings_warning() -> str | None:
     system = platform.system()
     home = Path.home()
     if system == "Windows":
-        base = Path(os.environ.get("APPDATA", home / "AppData/Roaming")) / "Aurora/AuroraViewer/config"
+        base = Path(os.environ.get("APPDATA", home / "AppData/Roaming")) / "Kitsune/KitsuneViewer/config"
     elif system == "Darwin":
-        base = home / "Library/Application Support/org.Aurora.AuroraViewer"
+        base = home / "Library/Application Support/org.Kitsune.KitsuneViewer"
     else:
-        base = Path(os.environ.get("XDG_CONFIG_HOME", home / ".config")) / "auroraviewer"
+        base = Path(os.environ.get("XDG_CONFIG_HOME", home / ".config")) / "kitsuneviewer"
     path = base / "demo" / "settings.json"
     try:
         weather = json.loads(path.read_text(encoding="utf-8")).get("weather", {})

@@ -9,9 +9,9 @@ use semver::Version;
 use serde::Deserialize;
 use std::time::Duration;
 
-pub const RELEASES: &str = "https://api.github.com/repos/Aurora-Viewer/Aurora-Viewer/releases?per_page=100";
-pub const RELEASE_PAGE: &str = "https://github.com/Aurora-Viewer/Aurora-Viewer/releases";
-const DOWNLOADS: &str = "https://github.com/Aurora-Viewer/Aurora-Viewer/releases/download";
+pub const RELEASES: &str = "https://api.github.com/repos/BlackShuck89/kitsune-aurora/releases?per_page=100";
+pub const RELEASE_PAGE: &str = "https://github.com/BlackShuck89/kitsune-aurora/releases";
+const DOWNLOADS: &str = "https://github.com/BlackShuck89/kitsune-aurora/releases/download";
 pub const POLICY: &str = "aurora-update-policy.json";
 pub const MAX_ARCHIVE: u64 = 2 * 1024 * 1024 * 1024;
 /// How long an installation below a new minimum may still sign in, when
@@ -503,7 +503,7 @@ mod tests {
         let production = Source::default();
         assert!(
             production
-                .validate_url("https://github.com/Aurora-Viewer/Aurora-Viewer/releases")
+                .validate_url("https://github.com/BlackShuck89/kitsune-aurora/releases")
                 .is_ok()
         );
         for url in [
